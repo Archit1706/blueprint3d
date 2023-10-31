@@ -30,7 +30,8 @@ module.exports = function (grunt) {
       target: "es5",
       declaration: true,
       sourceMap: true,
-      removeComments: false
+      removeComments: false,
+      project: 'tsconfig.json'
     }
   };
   configuration.typescript[globalConfig.moduleName] = {
@@ -64,7 +65,7 @@ module.exports = function (grunt) {
   configuration.uglify[globalConfig.moduleName] = {
     files: {}
   }
-  configuration.uglify[globalConfig.moduleName].files["dist/" + globalConfig.moduleName + ".min.js"] = globalConfig.outDir + "/" + globalConfig.moduleName +".js";
+  configuration.uglify[globalConfig.moduleName].files["dist/" + globalConfig.moduleName + ".min.js"] = globalConfig.outDir + "/" + globalConfig.moduleName + ".js";
 
   grunt.initConfig(configuration);
 
